@@ -1,0 +1,15 @@
+#!/bin/bash
+cqlsh -e "CREATE KEYSPACE IF NOT EXISTS test WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};"
+cqlsh -e "CREATE TABLE IF NOT EXISTS test.iris (id int primary key, sepal_l double, sepal_w double, petal_l double, petal_w double, species text);"
+echo "$ dse spark"
+dse spark <<-EOF
+case class Iris(id: Long, sepal_l: Double, sepal_w: Double, petal_l: Double, petal_w: Double, species: String);
+val rdd = sc.textFile("dsefs:///test/iris.csv").map(_.split(",")).map{x => (x(0).toDouble, x(1).toDouble, x(2).toDouble, x(3).toDouble, x(4))}.zipWithUniqueId().map(x => Iris(x._2, x._1._1,x._1._2, x._1._3, x._1._4, x._1._5));
+rdd.saveToCassandra("test", "iris");
+val df = rdd.toDF;
+df.write.json("dsefs:///test/irisWithId.json");
+val df2 = sqlContext.read.format("org.apache.spark.sql.cassandra").options(Map("keyspace"->"test", "table"->"iris")).load();
+df2.write.json("dsefs:///test/irisWithId2.json");
+rdd.joinWithCassandraTable[Iris]("test", "iris").on(SomeColumns("id")).take(3);
+df.join(df2, df("id") === df2("id")).show(3);
+EOF

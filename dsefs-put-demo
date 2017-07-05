@@ -1,0 +1,18 @@
+echo "$ dse fs"
+dse fs <<-EOF
+mkdir test
+mkdir checks
+ls
+cd test
+ls
+put ./iris.csv .
+ls -l
+cat iris.csv
+stat iris.csv
+get iris.csv ./foo.csv
+exit
+EOF
+echo "$ ls"
+ls
+echo "$dse hadoop fs -ls dsefs:///test"
+dse hadoop fs -ls dsefs:///test

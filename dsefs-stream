@@ -1,0 +1,8 @@
+read "start first batch (hit enter)"
+cp ./iris.csv /tmp/stream/iris1.csv
+cp ./iris.csv /tmp/stream/iris2.csv
+cp ./iris.csv /tmp/stream/iris3.csv
+read "second batch (hit enter)"
+cp ./iris.csv /tmp/stream/iris4.csv
+cp ./iris.csv /tmp/stream/iris5.csv
+cp ./iris.csv /tmp/stream/iris6.csv

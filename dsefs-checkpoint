@@ -1,0 +1,37 @@
+#!/bin/bash
+mkdir /tmp/stream
+echo "$ mkdir /tmp/stream"
+rm /tmp/stream/*
+echo "$ rm /tmp/stream/*"
+echo "$ dse spark"
+dse spark <<-EOF
+import org.apache.spark._
+import org.apache.spark.streaming._
+import org.apache.spark.streaming.StreamingContext._
+
+val checkpoint_path = "dsefs:///checks";
+val initialRDD = spark.sparkContext.parallelize(List(("dsefs", 1), ("rules", 1)))
+def createStreamingContext() = {
+        val newssc = new StreamingContext(sc, Seconds(2))
+        newssc.checkpoint(checkpoint_path);
+        val lines = newssc.textFileStream("file:///tmp/stream").map(_.split(",")).map(x => x(4))
+        val species = lines.map(x=>(x,1))
+        val mappingFunc = (word: String, one: Option[Int], state: State[Int]) => {
+          val sum = one.getOrElse(0) + state.getOption.getOrElse(0)
+          val output = (word, sum)
+          state.update(sum)
+          output
+        }
+        val stateDstream = species.reduceByKey(_+_).updateStateByKey[Int]((newValues: Seq[Int] , stateValue: Option[Int] ) => Some(newValues.sum + stateValue.getOrElse(0)))
+        stateDstream.print()
+        newssc
+      }
+val ssc = StreamingContext.getOrCreate(checkpoint_path, createStreamingContext)
+ssc.start()
+Thread.sleep(10000)
+ssc.stop(false)
+val ssc = StreamingContext.getOrCreate(checkpoint_path, createStreamingContext)
+ssc.start()
+Thread.sleep(10000)
+ssc.stop(false)
+EOF
