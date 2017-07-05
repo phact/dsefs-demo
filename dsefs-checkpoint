@@ -3,6 +3,8 @@ mkdir /tmp/stream
 echo "$ mkdir /tmp/stream"
 rm /tmp/stream/*
 echo "$ rm /tmp/stream/*"
+dse fs <<< echo "rm -r ./checks/"
+dse fs <<< echo "mkdir checks"
 echo "$ dse spark"
 dse spark <<-EOF
 import org.apache.spark._
@@ -26,12 +28,12 @@ def createStreamingContext() = {
         stateDstream.print()
         newssc
       }
-val ssc = StreamingContext.getOrCreate(checkpoint_path, createStreamingContext)
+var ssc = StreamingContext.getOrCreate(checkpoint_path, createStreamingContext)
 ssc.start()
-Thread.sleep(10000)
+Thread.sleep(20000)
 ssc.stop(false)
 val ssc = StreamingContext.getOrCreate(checkpoint_path, createStreamingContext)
 ssc.start()
-Thread.sleep(10000)
+Thread.sleep(20000)
 ssc.stop(false)
 EOF
