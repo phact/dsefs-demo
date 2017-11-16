@@ -1,6 +1,4 @@
 #!/bin/bash
-IP=$(ifconfig | awk '/inet/ { print $2 }' | egrep -v '^fe|^127|^192|^172|::' | head -1)
-
 if [ ! -x /usr/bin/hugo ]
 then
  HUGO_VERSION=0.20.2
@@ -15,22 +13,7 @@ fi
 git submodule update --init
 git submodule sync
 
-rm -rf workshops-book/public 
-(
-hugo serve \
- --port 1314 \
- --source workshops-book \
- --forceSyncStatic \
- --renderToDisk \
- --ignoreCache \
- --canonifyURLs \
- --bind ${IP} \
- --appendPort \
- --baseUrl "http://${IP}/" \
- --logFile hugo.log \
- --verboseLog \
- &
-LPID=$!
-printf "hugo running as pid %s\n" "${LPID}"
-printf "%s\n" "${LPID}" > .hugo.pid
-) &
+rm -rf docs/public 
+
+cd docs && hugo
+cd public && python -m SimpleHTTPServer 1313 &
