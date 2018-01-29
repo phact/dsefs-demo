@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dsefs demo</title>
+    <link>/</link>
+    <description>Recent content on dsefs demo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2017 14:21:00 -0500</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>/</link>
+      <pubDate>Mon, 10 Apr 2017 14:21:00 -0500</pubDate>
+      
+      <guid>/</guid>
+      <description>This is a guide for how to use the power tools dsefs asset brought to you by the Vanguard team.
+Motivation DSEFS is a relatively new part of DSE with particularly useful capabilities within the analytics space. The purpose of DSEFS is to prevent the need for DSE users with needs for a basic distributed file system to satisfy some of their real time DSE powered workloads from having to go install HDFS / call in a hadoop vendor.</description>
+    </item>
+    
+  </channel>
+</rss>

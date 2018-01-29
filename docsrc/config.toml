@@ -1,12 +1,13 @@
 languageCode = "en-us"
-title = "Asset Name"
+title = "dsefs demo"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
+baseUrl = "/"
+disableKinds = ["taxonomy","taxonomyTerm"]
 
 [params]
-	description = "Asset Name"
-
+	description = "dsefs demo"
 	logo = "images/asset-hub.svg"
 	favicon = "/images/asset-hub.png"
 
@@ -26,10 +27,10 @@ canonifyurls = true
 
 
 [[menu.main]]
-	name   = "Asset Name"
-	url    = "/"
+	name   = "Introduction"
+	url    = "/Introduction/"
 	weight = 10
 [[menu.main]]
-    name   = "Build and Run"
-    url    = "buildandrun/"
-    weight = 100
+	name   = "Scripts"
+	url    = "/Scripts/"
+	weight = 100
