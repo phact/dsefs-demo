@@ -33,7 +33,7 @@ Our intention is not to try to enter the hadoop market, but rather to ease the u
 
 Unlike its predecessor CFS, DSEFS stores the file data (sblocks) in the file system of the nodes in the cluster. It stores the file metadata (inodes) in Cassandra. CFS used to store both inodes and sblocks in Cassandra leading to undesirable performance issues related to compactions, tombstones, and read and write throughput. The file system locations used by DSEFS are configurable in the dse.yaml and should be separate volumes than the Cassandra data directory. DSEFS volumes can achieve significantly higher densities than Cassandra since predictable latencies are less of an option. Up to 20TB per node is a good place to start.
 
-DSEFS was designed to run with comparable (ballpark) performance to HDFS. As expected with a distributed file system, DSEFS performs better in therms of throughput with larger files than smaller files. When interacting with DSEFS programatically (today) we need to import denendencies from `dse.jar`. This will not always be the case as they will be added to the spark dependencies in artifactory, stay tuned.
+DSEFS was designed to run with comparable performance to HDFS. As expected with a distributed file system, DSEFS performs better in terms of throughput with larger files than smaller files. When interacting with DSEFS programmatically (today) we need to import dependencies from dse.jar. This will not always be the case as they will be added to the spark dependencies in antifactory in future releases.
 
 These demos will dive deeper on the following functionality:
 
