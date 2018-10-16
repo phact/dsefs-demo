@@ -23,13 +23,13 @@ This field asset includes sample usage of DSEFS in the following contexts:
 * DSEFS loading, unloading, and joining to, from, and with Cassandra
 * DSEFS for checkpointing of Spark Streaming jobs
 
-### Business Take Aways
+### Business Takeaways
 
 When a use case arises that requires a distributed filesystem, customers do not necesarlily have to get a third party hadoop vendor involved. Most of these cases can be covered by DSEFS.
 
 Our intention is not to try to enter the hadoop market, but rather to ease the use cases that are mostly DSE powered but require a distributed file system as well.
 
-### Technical Take Aways
+### Technical Takeaways
 
 Unlike it's precursor CFS, DSEFS stores the file data (sblocks) in the file system of the nodes in the cluster. It stores the file metatdata (inodes) in cassandra. CFS used to store both inodes and sblocks in cassandra leading to undesirable performance issues related to compactions, tombstones, and read and write throughput. The file system locations used by DSEFS are configurable in the dse.yaml and should be separate volumes than the cassandra data directory. DSEFS volumes can achieve significantly higher densities than cassandra since predictable latencies are less of an option. Up to 20TB per node is a good place to start.
 
