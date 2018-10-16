@@ -26,4 +26,10 @@ C--"Unload"-->E
 
 ### Architecture
 
-DSEFS can be used for loading / unloading data from C* and for checkpointing during spark streaming jobs.
+Uses for DSEFS include:
+
+- Loading and Unloading data into DSE Core (Cassandra)
+- Checkpointing during Spark streaming jobs
+- Spark analytics application processing scratchpad (puts and gets) 
+
+This demo will visit each of these use cases.
