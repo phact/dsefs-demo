@@ -1,3 +1,3 @@
 foo.csv
 docs/public
-*.out
+nohup.out
