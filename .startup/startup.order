@@ -1,5 +1,5 @@
 hugo
 #put
 #load
-#checkpoint
-#stream
+#spark-streaming-checkpointing-job
+#move-files
