@@ -324,3 +324,120 @@ Press Ctrl+C to stop
 Config file changed: /Users/ericzietlow/Documents/GitHub/dsefs-demo/docsrc/config.toml
 Started building sites ...
 Total in 68 ms
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 44 ms
+Watching for changes in /home/tato/Desktop/dsefs-demo/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at //http:1313/// (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 43 ms
+Watching for changes in /home/tato/Desktop/dsefs-demo/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at //http:1313/// (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 46 ms
+Watching for changes in /home/tato/Desktop/dsefs-demo/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at //http:1313/// (bind address 0.0.0.0)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site
+2018-10-16 10:42 -0400
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": RENAME
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": CREATE
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": WRITE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 16 ms
+
+Change detected, rebuilding site
+2018-10-16 10:44 -0400
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": RENAME
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": CREATE
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Introduction/index.md": WRITE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 17 ms
+
+Change detected, rebuilding site
+2018-10-16 10:44 -0400
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/architecture.md": RENAME
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/architecture.md": CREATE
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/architecture.md": WRITE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 17 ms
+
+Change detected, rebuilding site
+2018-10-16 10:44 -0400
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/build_and_run.md": RENAME
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/build_and_run.md": CREATE
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/build_and_run.md": WRITE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 17 ms
+
+Change detected, rebuilding site
+2018-10-16 10:44 -0400
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/checkpoint.md": RENAME
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/checkpoint.md": CREATE
+Source changed "/home/tato/Desktop/dsefs-demo/docsrc/content/Scripts/checkpoint.md": WRITE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+6 regular pages created
+6 other pages created
+3 non-page files copied
+0 paginator pages created
+total in 18 ms

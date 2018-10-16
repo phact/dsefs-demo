@@ -18,6 +18,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     DL_SUFFIX=macOS-64bit
     INNER_SUFFIX=macos-64bit
 fi
+IP=$(grep $(hostname)_ext /etc/hosts | awk '{print $1}')
 
 if [ ! -x /usr/bin/hugo ] && ! [ -x "$(command -v hugo)" ] ; then
  //https://github.com/gohugoio/hugo/releases/download/v0.27/hugo_0.27_macOS-64bit.tar.gz
