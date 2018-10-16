@@ -35,7 +35,7 @@ Unlike it's precursor CFS, DSEFS stores the file data (sblocks) in the file syst
 
 DSEFS was designed to run with comparable (ballpark) performance to HDFS. As expected with a distributed file system, DSEFS performs better in therms of throughput with larger files than smaller files. When interacting with DSEFS programatically (today) we need to import denendencies from `dse.jar`. This will not always be the case as they will be added to the spark dependencies in artifactory, stay tuned.
 
-These docs will dive deeper on the following functionality:
+These demos will dive deeper on the following functionality:
 
 - Puts and Gets
 - Spark dsefs interactions
