@@ -23,6 +23,8 @@ This field asset includes sample usage of DSEFS in the following contexts:
 * DSEFS loading, unloading, and joining to, from, and with Cassandra
 * DSEFS for checkpointing of Spark Streaming jobs
 
+Studio is provided in this demo to aid in further investigation, however none of the default Notebooks are used. All steps for this demo will be performed by logging into node0 of the cluster.
+
 ### Business Takeaways
 
 When a use case arises that requires a distributed filesystem, customers do not necesarlily have to get a third party hadoop vendor involved. Most of these cases can be covered by DSEFS.
