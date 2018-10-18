@@ -1,6 +1,6 @@
 #!/bin/bash
-cqlsh -e "CREATE KEYSPACE IF NOT EXISTS test WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};"
-cqlsh -e "CREATE TABLE IF NOT EXISTS test.iris (id int primary key, sepal_l double, sepal_w double, petal_l double, petal_w double, species text);"
+cqlsh node0 -e "CREATE KEYSPACE IF NOT EXISTS test WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};"
+cqlsh node0 -e "CREATE TABLE IF NOT EXISTS test.iris (id int primary key, sepal_l double, sepal_w double, petal_l double, petal_w double, species text);"
 echo "$ dse spark"
 dse spark <<-EOF
 case class Iris(id: Long, sepal_l: Double, sepal_w: Double, petal_l: Double, petal_w: Double, species: String);
